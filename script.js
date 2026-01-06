@@ -1,6 +1,6 @@
 const min = 4200;
 const max = 7800;
-const interval = 10000;
+const interval = 1000;
 
 function updateOnlineCount() {
   const value = Math.floor(Math.random() * (max - min + 1)) + min;
