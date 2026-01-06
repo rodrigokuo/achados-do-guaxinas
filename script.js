@@ -1,55 +1,68 @@
-const min = 4200;
-const max = 7800;
-const interval = 10000;
-
-function updateOnlineCount() {
-  const value = Math.floor(Math.random() * (max - min + 1)) + min;
-  const el = document.getElementById("onlineCount");
-  if (el) el.textContent = value.toLocaleString("pt-BR");
+function formatBR(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
-updateOnlineCount();
-setInterval(updateOnlineCount, interval);
-
-const privacyModal = document.getElementById("privacyModal");
-const termsModal = document.getElementById("termsModal");
-
-function openModal(modal) {
-  modal.classList.add("is-open");
-  modal.setAttribute("aria-hidden", "false");
+function randInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function closeModal(modal) {
-  modal.classList.remove("is-open");
-  modal.setAttribute("aria-hidden", "true");
+function setOnlineCount() {
+  const onlineEl = document.getElementById("onlineCount");
+  const activeEl = document.getElementById("activeMembers");
+
+  const value = randInt(4200, 7800);
+  onlineEl.textContent = formatBR(value);
+  activeEl.textContent = formatBR(value);
 }
 
-document.getElementById("openPrivacy").addEventListener("click", () => {
-  openModal(privacyModal);
-});
+function initModals() {
+  const privacyModal = document.getElementById("privacyModal");
+  const termsModal = document.getElementById("termsModal");
 
-document.getElementById("openTerms").addEventListener("click", () => {
-  openModal(termsModal);
-});
+  const openPrivacy = document.getElementById("openPrivacy");
+  const openTerms = document.getElementById("openTerms");
 
-document.querySelectorAll("[data-close]").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    closeModal(privacyModal);
-    closeModal(termsModal);
+  function open(modal) {
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function close(modal) {
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  openPrivacy.addEventListener("click", () => open(privacyModal));
+  openTerms.addEventListener("click", () => open(termsModal));
+
+  document.querySelectorAll("[data-close]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-close");
+      const modal = document.getElementById(id);
+      if (modal) close(modal);
+    });
   });
-});
 
-document.querySelectorAll(".modal-overlay").forEach((overlay) => {
-  overlay.addEventListener("click", (e) => {
-    if (e.target === overlay) {
-      closeModal(overlay);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      if (privacyModal.getAttribute("aria-hidden") === "false") close(privacyModal);
+      if (termsModal.getAttribute("aria-hidden") === "false") close(termsModal);
     }
   });
-});
+}
 
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    closeModal(privacyModal);
-    closeModal(termsModal);
-  }
+function initBasics() {
+  const yearEl = document.getElementById("year");
+  yearEl.textContent = new Date().getFullYear();
+
+  const membersEl = document.getElementById("membersCount");
+  membersEl.textContent = "5.000";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initBasics();
+  initModals();
+
+  setOnlineCount();
+  setInterval(setOnlineCount, 10000);
 });
