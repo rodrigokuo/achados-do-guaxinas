@@ -4,249 +4,311 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Achados do Guaxinas</title>
+  <meta name="description" content="Entre no grupo do WhatsApp e receba promoções reais, rápidas e sem enrolação." />
 
-  <!-- IMPORTANTE: sem barra no começo + cache buster -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=2" />
 </head>
 
 <body>
-  <div class="page">
+  <div class="bg">
+    <div class="blob blob-1" aria-hidden="true"></div>
+    <div class="blob blob-2" aria-hidden="true"></div>
+    <div class="blob blob-3" aria-hidden="true"></div>
+    <div class="grid" aria-hidden="true"></div>
+  </div>
 
-    <section class="hero">
-      <div class="brand">
-        <img
-          class="logo"
-          src="https://i.imgur.com/HOwicRk.png"
-          alt="Achados do Guaxinas"
-        />
+  <header class="top">
+    <div class="container top-inner">
+      <img
+        class="logo"
+        src="https://i.imgur.com/HOwicRk.png"
+        alt="Achados do Guaxinas"
+        loading="eager"
+      />
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="container hero-inner">
+      <div class="pill" aria-live="polite">
+        <span class="dot"></span>
+        <span class="pill-text">+ <strong id="membersCount">5.000</strong> membros economizando todos os dias</span>
       </div>
 
-      <h1>Achados do Guaxinas</h1>
-      <h2>Sua fonte de descontos no WhatsApp</h2>
+      <h1 class="title">
+        Economize até <span class="highlight">70%</span><br class="break" />
+        em suas compras
+      </h1>
 
-      <p class="hero-text">
-        Entre no grupo e receba promoções reais, rápidas
-        <br />
-        e sem enrolação.
+      <p class="subtitle">
+        Entre no nosso grupo exclusivo do WhatsApp e receba as melhores ofertas, cupons e promoções antes de todo mundo.
+        <span class="free">100% gratuito!</span>
       </p>
 
-      <div class="cta-wrapper">
+      <div class="cta-area">
         <a
+          class="cta"
           href="https://chat.whatsapp.com/J8ujNcOdDilFdccQ0WCZRR"
-          class="cta primary"
           target="_blank"
           rel="noopener"
         >
-          ENTRAR NO GRUPO DO WHATSAPP
+          <span class="wa" aria-hidden="true">💬</span>
+          Entrar no Grupo Grátis
         </a>
 
-        <div class="pill" aria-live="polite">
-          <span class="bolt">⚡</span>
-          <span>
-            <strong id="onlineCount">4.706</strong> pessoas online agora
-          </span>
+        <div class="online" aria-live="polite">
+          <span class="bolt" aria-hidden="true">⚡</span>
+          <strong id="onlineCount">5.247</strong>
+          <span class="online-text">pessoas online agora</span>
         </div>
       </div>
 
-      <p class="note">
-        100% gratuito • Pode sair quando quiser
-      </p>
-    </section>
-
-    <section class="features">
-      <h3>O que você vai receber:</h3>
-
-      <div class="features-list">
-        <div class="feature">
-          <div class="icon">⚡</div>
-          <div class="content">
-            <strong>Novidades todo dia</strong>
-            <p>Promoções novas e atualizadas direto no seu celular.</p>
-          </div>
-        </div>
-
-        <div class="feature">
-          <div class="icon">🏷️</div>
-          <div class="content">
-            <strong>Cupons exclusivos</strong>
-            <p>Descontos que você não encontra fácil por aí.</p>
-          </div>
-        </div>
-
-        <div class="feature">
-          <div class="icon">💰</div>
-          <div class="content">
-            <strong>Economia real</strong>
-            <p>Gaste menos e aproveite mais. Simples assim.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <p>Achados do Guaxinas</p>
-
-      <div class="footer-links">
-        <button class="link-btn" id="openPrivacy" type="button">
-          Política de Privacidade
-        </button>
-
+      <div class="trust">
+        <span class="check" aria-hidden="true">✅</span>
+        <span>100% gratuito</span>
         <span class="sep">•</span>
-
-        <button class="link-btn" id="openTerms" type="button">
-          Termos de Uso
-        </button>
+        <span>Pode sair quando quiser</span>
       </div>
-    </footer>
 
-    <!-- MODAL: POLÍTICA DE PRIVACIDADE -->
-    <div class="modal-overlay" id="privacyModal" aria-hidden="true">
-      <div class="modal" role="dialog" aria-modal="true" aria-label="Política de Privacidade">
-        <div class="modal-header">
-          <h4>Política de Privacidade</h4>
-          <button class="modal-close" type="button" data-close aria-label="Fechar">✕</button>
+      <section class="stats" aria-label="Métricas">
+        <div class="stat">
+          <div class="stat-top">
+            <span class="stat-ico" aria-hidden="true">👥</span>
+            <span class="stat-label">Membros Ativos</span>
+          </div>
+          <div class="stat-value" id="activeMembers">5.247</div>
         </div>
 
-        <div class="modal-content">
-          <p><strong>Política de Privacidade</strong><br />Achados do Guaxinas</p>
-
-          <h6>Disposições Gerais</h6>
-          <p>
-            Esta Política de Privacidade estabelece as diretrizes adotadas pelo Achados do Guaxinas quanto à coleta,
-            utilização, armazenamento, compartilhamento e proteção de dados pessoais dos usuários que acessam, navegam ou
-            interagem com seus sites, páginas, formulários, domínios, subdomínios e demais canais digitais vinculados à marca.
-            A utilização de qualquer um desses ambientes implica ciência e concordância com as disposições aqui previstas.
-          </p>
-
-          <h6>Atuação Prática</h6>
-          <p>
-            O Achados do Guaxinas atua na divulgação de ofertas, cupons, descontos e oportunidades promocionais disponibilizadas por terceiros.
-            O acesso ao conteúdo poderá ocorrer por meio de seus domínios principais, subdomínios, páginas específicas, landing pages, ambientes integrados
-            ou outros canais digitais eventualmente utilizados. A plataforma não realiza a comercialização de produtos ou serviços, não intermedia relações
-            de consumo e não assume responsabilidade pelas condições comerciais, preços, prazos, estoques, garantias ou execução das ofertas divulgadas,
-            cabendo ao usuário verificar tais informações diretamente junto aos respectivos fornecedores.
-          </p>
-
-          <h6>Coleta de Dados</h6>
-          <p>
-            No curso da utilização dos ambientes digitais do Achados do Guaxinas, poderão ser coletados dados pessoais fornecidos voluntariamente pelo usuário,
-            bem como dados obtidos de forma automática a partir da navegação, interação ou simples acesso às páginas. Essa coleta poderá abranger informações de
-            identificação e contato, registros de acesso, identificadores técnicos, dados de dispositivo e navegador, localização aproximada, registros de interação,
-            eventos de navegação e demais informações correlatas ao uso da plataforma, sempre de acordo com as finalidades compatíveis com sua atividade.
-          </p>
-
-          <h6>Tecnologias de Rastreamento e Coleta Automatizada</h6>
-          <p>
-            A coleta de informações poderá ocorrer mediante o uso de cookies, pixels, tags, scripts e tecnologias equivalentes, próprias ou de terceiros,
-            empregados para viabilizar o funcionamento adequado dos sites e subdomínios, analisar padrões de uso, mensurar desempenho, avaliar resultados,
-            reforçar a segurança, prevenir acessos indevidos ou automatizados e apoiar processos internos de auditoria, monitoramento e melhoria contínua.
-          </p>
-
-          <h6>Finalidades do Tratamento</h6>
-          <p>
-            Os dados eventualmente fornecidos pelos usuários ou coletados durante a navegação poderão ser utilizados para finalidades relacionadas ao funcionamento
-            e à melhoria da plataforma, compreensão de padrões de navegação e otimização da experiência, além de segurança e cumprimento de obrigações legais.
-          </p>
-
-          <h6>Compartilhamento de Informações</h6>
-          <p>
-            O Achados do Guaxinas não vende nem comercializa dados pessoais. As informações coletadas poderão ser compartilhadas apenas quando necessário para o
-            funcionamento regular do site, ou por obrigação legal/determinação de autoridade competente.
-          </p>
-
-          <h6>Base Legal e Direitos do Titular</h6>
-          <p>
-            O tratamento de dados pessoais ocorre conforme a Lei nº 13.709/2018 (LGPD), com fundamento em consentimento, legítimo interesse ou cumprimento legal,
-            conforme aplicável. O titular pode exercer os direitos previstos na legislação vigente.
-          </p>
-
-          <h6>Armazenamento e Segurança</h6>
-          <p>
-            São adotadas medidas técnicas e administrativas compatíveis para proteção contra acessos não autorizados, uso indevido, perda, alteração ou divulgação.
-            Ainda assim, não é possível assegurar eliminação absoluta de riscos em ambientes digitais.
-          </p>
-
-          <h6>Retenção</h6>
-          <p>
-            Os dados serão mantidos pelo período necessário às finalidades e obrigações legais/regulatórias, podendo ser eliminados, anonimizados ou mantidos de forma
-            segura conforme a legislação aplicável.
-          </p>
-
-          <h6>Atualizações</h6>
-          <p>
-            Esta Política poderá ser alterada a qualquer tempo, a critério do Achados do Guaxinas.
-          </p>
+        <div class="stat">
+          <div class="stat-top">
+            <span class="stat-ico" aria-hidden="true">💸</span>
+            <span class="stat-label">Economizados</span>
+          </div>
+          <div class="stat-value">R$ 2.3M+</div>
         </div>
 
-        <div class="modal-actions">
-          <button class="modal-ok" type="button" data-close>Entendi</button>
+        <div class="stat">
+          <div class="stat-top">
+            <span class="stat-ico" aria-hidden="true">🔥</span>
+            <span class="stat-label">Ofertas por Dia</span>
+          </div>
+          <div class="stat-value">50+</div>
         </div>
+      </section>
+    </div>
+  </main>
+
+  <section class="reasons" id="porque">
+    <div class="container">
+      <h2 class="section-title-lg">Por que entrar no nosso grupo?</h2>
+      <p class="section-subtitle">Milhares de pessoas já estão economizando. Veja o que você vai receber:</p>
+
+      <div class="reason-grid">
+        <article class="reason-card">
+          <div class="reason-ico" aria-hidden="true">⚡</div>
+          <h3>Ofertas relâmpago</h3>
+          <p>Receba alertas instantâneos das melhores promoções antes que esgotem.</p>
+        </article>
+
+        <article class="reason-card">
+          <div class="reason-ico" aria-hidden="true">🏷️</div>
+          <h3>Cupons exclusivos</h3>
+          <p>Cupons de desconto que você não encontra em nenhum outro lugar.</p>
+        </article>
+
+        <article class="reason-card">
+          <div class="reason-ico" aria-hidden="true">🔔</div>
+          <h3>Alertas em tempo real</h3>
+          <p>Notificações rápidas quando surgem ofertas imperdíveis.</p>
+        </article>
+
+        <article class="reason-card">
+          <div class="reason-ico" aria-hidden="true">🎁</div>
+          <h3>Brindes e amostras</h3>
+          <p>Fique por dentro de produtos grátis e amostras exclusivas.</p>
+        </article>
+
+        <article class="reason-card">
+          <div class="reason-ico" aria-hidden="true">🛡️</div>
+          <h3>Ofertas verificadas</h3>
+          <p>Selecionamos e checamos os achados para evitar pegadinhas.</p>
+        </article>
+
+        <article class="reason-card">
+          <div class="reason-ico" aria-hidden="true">🕒</div>
+          <h3>Histórico de preços</h3>
+          <p>Ajuda a saber se o preço está realmente bom ou é “metade do dobro”.</p>
+        </article>
       </div>
     </div>
+  </section>
 
-    <!-- MODAL: TERMOS DE USO -->
-    <div class="modal-overlay" id="termsModal" aria-hidden="true">
-      <div class="modal" role="dialog" aria-modal="true" aria-label="Termos de Uso">
-        <div class="modal-header">
-          <h4>Termos de Uso</h4>
-          <button class="modal-close" type="button" data-close aria-label="Fechar">✕</button>
-        </div>
+  <section class="steps" id="como-funciona">
+    <div class="container">
+      <h2 class="section-title-lg">Como funciona?</h2>
+      <p class="section-subtitle">Em apenas 3 passos simples você começa a economizar</p>
 
-        <div class="modal-content">
-          <p><strong>Termos de Uso</strong><br />Achados do Guaxinas</p>
+      <div class="steps-wrap">
+        <div class="steps-line" aria-hidden="true"></div>
 
-          <p>
-            Os Termos de Uso a seguir regulam a utilização do site Achados do Guaxinas. Ao acessar e usar o site, você concorda integralmente com estes termos.
-          </p>
+        <article class="step">
+          <div class="step-bubble">
+            <span class="step-emoji" aria-hidden="true">💬</span>
+            <span class="step-badge">01</span>
+          </div>
+          <h3>Entre no grupo</h3>
+          <p>Clique no botão e entre no nosso grupo do WhatsApp. É rápido e gratuito.</p>
+        </article>
 
-          <h6>Uso do Site</h6>
-          <p>
-            O Achados do Guaxinas se destina à divulgação de promoções, ofertas e oportunidades de compra de lojas e plataformas de terceiros. O acesso ao conteúdo é
-            gratuito, devendo o usuário respeitar as seguintes regras:
-          </p>
+        <article class="step">
+          <div class="step-bubble">
+            <span class="step-emoji" aria-hidden="true">🔔</span>
+            <span class="step-badge">02</span>
+          </div>
+          <h3>Receba as ofertas</h3>
+          <p>Você começa a receber as melhores promoções direto no seu celular.</p>
+        </article>
 
-          <ul>
-            <li>Não utilizar o site para fins ilegais ou não autorizados</li>
-            <li>Não realizar cópias não autorizadas do conteúdo do site</li>
-            <li>Não modificar, descompilar ou tentar obter o código-fonte do site</li>
-          </ul>
+        <article class="step">
+          <div class="step-bubble">
+            <span class="step-emoji" aria-hidden="true">🛍️</span>
+            <span class="step-badge">03</span>
+          </div>
+          <h3>Economize</h3>
+          <p>Aproveite os descontos e economize de verdade nas suas compras.</p>
+        </article>
+      </div>
 
-          <h6>Direitos Autorais</h6>
-          <p>
-            Todo o conteúdo do Achados do Guaxinas, incluindo textos, imagens, gráficos, identidade visual e design, está protegido pelas leis de direitos autorais e
-            demais normas aplicáveis. É proibido o uso, reprodução ou distribuição sem autorização prévia e expressa.
-          </p>
-
-          <h6>Isenção de Responsabilidade</h6>
-          <p>
-            O Achados do Guaxinas atua exclusivamente como divulgador de promoções e ofertas disponibilizadas por terceiros. Não realiza vendas, não intermedia relações
-            de consumo e não se responsabiliza por problemas relacionados às compras, incluindo disponibilidade, preços, prazos, estoques, pagamento, entrega ou garantias.
-            Verifique as informações diretamente nos canais oficiais dos fornecedores.
-          </p>
-
-          <h6>Modificações dos Termos</h6>
-          <p>
-            O Achados do Guaxinas reserva-se o direito de modificar ou atualizar estes Termos a qualquer momento. As alterações passam a valer a partir da publicação e
-            a continuidade do uso implica aceitação dos novos termos.
-          </p>
-
-          <h6>Contato</h6>
-          <p>
-            Em caso de dúvidas, contato pelo e-mail: <strong>contato@achadosdoguaxinas.com</strong>
-          </p>
-
-          <p><em>Última atualização: janeiro de 2026.</em></p>
-        </div>
-
-        <div class="modal-actions">
-          <button class="modal-ok" type="button" data-close>Entendi</button>
+      <div class="steps-cta">
+        <a
+          class="cta cta-secondary"
+          href="https://chat.whatsapp.com/J8ujNcOdDilFdccQ0WCZRR"
+          target="_blank"
+          rel="noopener"
+        >
+          <span class="wa" aria-hidden="true">💬</span>
+          Entrar no Grupo Grátis
+        </a>
+        <div class="trust trust-tight">
+          <span class="check" aria-hidden="true">✅</span>
+          <span>Sem custo</span>
+          <span class="sep">•</span>
+          <span>Saída livre</span>
         </div>
       </div>
-    </div>
 
+      <div class="footer-actions">
+        <button class="link-btn" id="openPrivacy" type="button">Política de Privacidade</button>
+        <span class="mini-sep">•</span>
+        <button class="link-btn" id="openTerms" type="button">Termos de Uso</button>
+      </div>
+
+      <p class="copyright">
+        © <span id="year"></span> Achados do Guaxinas
+      </p>
+    </div>
+  </section>
+
+  <div class="modal" id="privacyModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+    <div class="modal-backdrop" data-close="privacyModal"></div>
+    <div class="modal-panel" role="document">
+      <div class="modal-head">
+        <h3 id="privacyTitle">Política de Privacidade</h3>
+        <button class="modal-close" type="button" data-close="privacyModal" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Achados do Guaxinas</strong></p>
+
+        <h4>Disposições Gerais</h4>
+        <p>Esta Política de Privacidade estabelece as diretrizes adotadas pelo Achados do Guaxinas quanto à coleta, utilização, armazenamento, compartilhamento e proteção de dados pessoais dos usuários que acessam, navegam ou interagem com seus sites, páginas, formulários, domínios, subdomínios e demais canais digitais vinculados à marca. A utilização de qualquer um desses ambientes implica ciência e concordância com as disposições aqui previstas.</p>
+
+        <h4>Atuação Prática</h4>
+        <p>O Achados do Guaxinas atua na divulgação de ofertas, cupons, descontos e oportunidades promocionais disponibilizadas por terceiros. A plataforma não realiza a comercialização de produtos ou serviços, não intermedia relações de consumo e não assume responsabilidade pelas condições comerciais, preços, prazos, estoques, garantias ou execução das ofertas divulgadas, cabendo ao usuário verificar tais informações diretamente junto aos respectivos fornecedores.</p>
+
+        <h4>Coleta de Dados</h4>
+        <p>Poderão ser coletados dados fornecidos voluntariamente e dados obtidos de forma automática a partir da navegação, incluindo registros de acesso, identificadores técnicos, dados de dispositivo e navegador, localização aproximada e registros de interação, sempre de acordo com finalidades compatíveis com a atividade do Achados do Guaxinas.</p>
+
+        <h4>Tecnologias de Rastreamento</h4>
+        <p>A coleta poderá ocorrer mediante cookies, pixels, tags, scripts e tecnologias equivalentes, próprias ou de terceiros, para viabilizar o funcionamento, analisar padrões de uso, mensurar desempenho e reforçar a segurança.</p>
+
+        <h4>Finalidades do Tratamento</h4>
+        <p>As informações poderão ser utilizadas para funcionamento e melhoria da plataforma, compreensão de padrões de navegação, otimização da experiência, controle, segurança e cumprimento de obrigações legais.</p>
+
+        <h4>Compartilhamento</h4>
+        <p>O Achados do Guaxinas não vende dados pessoais. As informações poderão ser compartilhadas apenas quando necessário para funcionamento do site ou por obrigação legal.</p>
+
+        <h4>Base Legal e Direitos</h4>
+        <p>O tratamento ocorre conforme a LGPD (Lei nº 13.709/2018), com fundamento no consentimento, legítimo interesse ou cumprimento de obrigações legais. O titular poderá exercer seus direitos conforme a legislação aplicável.</p>
+
+        <h4>Segurança</h4>
+        <p>São adotadas medidas técnicas e administrativas compatíveis com a natureza dos dados tratados. Ainda assim, não é possível assegurar eliminação absoluta de riscos em ambientes digitais.</p>
+
+        <h4>Retenção</h4>
+        <p>Os dados serão mantidos pelo tempo necessário às finalidades e obrigações legais, podendo ser eliminados, anonimizados ou mantidos de forma segura conforme a legislação.</p>
+
+        <h4>Atualizações</h4>
+        <p>Esta Política poderá ser alterada a qualquer tempo, a critério do Achados do Guaxinas.</p>
+      </div>
+      <div class="modal-foot">
+        <button class="modal-btn" type="button" data-close="privacyModal">Fechar</button>
+      </div>
+    </div>
   </div>
 
-  <!-- IMPORTANTE: sem barra no começo + cache buster -->
-  <script src="script.js?v=1"></script>
+  <div class="modal" id="termsModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
+    <div class="modal-backdrop" data-close="termsModal"></div>
+    <div class="modal-panel" role="document">
+      <div class="modal-head">
+        <h3 id="termsTitle">Termos de Uso</h3>
+        <button class="modal-close" type="button" data-close="termsModal" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Achados do Guaxinas</strong></p>
+        <p>Os Termos de Uso a seguir regulam a utilização do site Achados do Guaxinas. Ao acessar e usar o site, você concorda integralmente com estes termos.</p>
+
+        <h4>Uso do Site</h4>
+        <p>O Achados do Guaxinas se destina à divulgação de promoções, ofertas e oportunidades de compra de lojas e plataformas de terceiros. O acesso ao conteúdo é gratuito, devendo o usuário respeitar as seguintes regras:</p>
+        <ul>
+          <li>Não utilizar o site para fins ilegais ou não autorizados</li>
+          <li>Não realizar cópias não autorizadas do conteúdo do site</li>
+          <li>Não modificar, descompilar ou tentar obter o código-fonte do site</li>
+        </ul>
+
+        <h4>Direitos Autorais</h4>
+        <p>Todo o conteúdo do Achados do Guaxinas, incluindo textos, imagens, gráficos, identidade visual e design, está protegido pelas leis de direitos autorais e demais normas aplicáveis. É proibido o uso, reprodução ou distribuição de qualquer material do site sem autorização prévia e expressa.</p>
+
+        <h4>Isenção de Responsabilidade</h4>
+        <p>O Achados do Guaxinas atua exclusivamente como divulgador de promoções e ofertas disponibilizadas por terceiros. Não realiza vendas, não intermedia relações de consumo e não se responsabiliza por problemas relacionados às compras efetuadas com base nas ofertas divulgadas, incluindo disponibilidade de produtos, preços, prazos, estoques, formas de pagamento, entrega ou políticas de troca e garantia. Recomenda-se verificar as informações diretamente nos sites ou canais oficiais dos fornecedores antes de concluir qualquer compra.</p>
+
+        <h4>Modificações</h4>
+        <p>O Achados do Guaxinas reserva-se o direito de modificar ou atualizar estes Termos a qualquer momento. As alterações passam a valer a partir de sua publicação.</p>
+
+        <h4>Contato</h4>
+        <p>Em caso de dúvidas, entre em contato pelo WhatsApp: (11)94772-4560</p>
+
+        <p><strong>Última atualização:</strong> janeiro de 2026.</p>
+      </div>
+      <div class="modal-foot">
+        <button class="modal-btn" type="button" data-close="termsModal">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js?v=2"></script>
+
+<section class="final-image">
+  <div class="container">
+    <img
+      src="https://i.imgur.com/cimW74a.png"
+      alt="Achados do Guaxinas – economize todos os dias"
+      loading="lazy"
+    />
+  </div>
+</section>
+
 </body>
 </html>
