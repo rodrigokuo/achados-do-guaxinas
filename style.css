@@ -276,7 +276,7 @@ body{
 /* Reasons */
 .reasons{
   padding: 52px 0 62px;
-  border-top: 10px solid rgba(227,6,19,.06);
+  border-top: none;
 }
 .reason-grid{
   width:min(980px, 100%);
